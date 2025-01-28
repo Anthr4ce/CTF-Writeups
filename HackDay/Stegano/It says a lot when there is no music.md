@@ -23,7 +23,7 @@ To dig deeper, I used `ffprobe`, a tool from the FFmpeg suite, to extract metada
 - Analyzing file formats.
 - Identifying hidden attachments.
 
-(images/ffprob_screen.png)
+![Screenshot](images/ffprob_screen.png)
 
 Unfortunately, nothing unusual was found in the metadata.
 
@@ -45,7 +45,7 @@ Next, I used `exiftool` to analyze the file further, hoping to uncover hidden da
 - Extracting hidden attachments.
 - Searching for anomalies.
 
-(images/exiftool_screen.png)
+![Screenshot](images/exiftool_screen.png)
 
 Unfortunately, even `exiftool` revealed nothing suspicious.
 
@@ -66,7 +66,7 @@ Since metadata analysis didn’t yield results, I moved on to search for hidden 
 
 
 **Output**: 
-(images/strings_screen.png)
+![Screenshot](images/strings_screen.png)
 
 Despite scanning for keywords and hidden data, there was no luck with `strings`.
 
@@ -105,7 +105,7 @@ Command used:
 `xxd file.wav | less`
 
 After carefully analyzing the binary data, I finally discovered the flag embedded deep within the file:  
-(images/xxd_screen.png)
+![Screenshot](images/xxd_screen.png)
 
 ---
 
