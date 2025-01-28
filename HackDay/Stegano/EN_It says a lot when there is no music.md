@@ -71,7 +71,7 @@ Since metadata analysis didn’t yield results, I moved on to search for hidden 
 Despite scanning for keywords and hidden data, there was no luck with `strings`.
 
 ---
-#### Step 5: Binary Analysis with Binwalk
+#### **Step 5: Binary Analysis with Binwalk**
 
 Still empty-handed, I decided to dig deeper into the binary structure using `binwalk`.
 
@@ -88,7 +88,7 @@ Command used:
 
 However, even `binwalk` failed to provide any significant clues:  
 
-#### Step 6: Hexadecimal Analysis with `xxd`
+#### **Step 6: Hexadecimal Analysis with `xxd`**
 
 Finally, I decided to inspect the file’s raw binary data using `xxd`.
 
@@ -102,7 +102,7 @@ Finally, I decided to inspect the file’s raw binary data using `xxd`.
 - Inspecting steganographic payloads or hidden data
 
 Command used:
-`xxd file.wav | less`
+`xxd file.wav`
 
 After carefully analyzing the binary data, I finally discovered the flag embedded deep within the file:  
 ![Screenshot](images/xxd_screen.png)
