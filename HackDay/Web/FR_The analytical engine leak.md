@@ -62,7 +62,7 @@ Une fois la table `blueprints` identifiée, j’ai listé ses colonnes avec ce p
 
 **Résultat :**
 
-![Screenshot](images/web_columns_names.png)
+![Screenshot](images/web_column_names.png)
 ---
 
 #### **Étape 6 : Extraire les données de la table**
