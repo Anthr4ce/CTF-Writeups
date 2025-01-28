@@ -23,7 +23,7 @@ To dig deeper, I used `ffprobe`, a tool from the FFmpeg suite, to extract metada
 - Analyzing file formats.
 - Identifying hidden attachments.
 
-![Screenshot](images/ffprob_screen.png)
+![Screenshot](images/ffprobe_screen.png)
 
 Unfortunately, nothing unusual was found in the metadata.
 
