@@ -1,6 +1,7 @@
 ### **Flask Web Challenge - Template Injection Analysis**
 
 In this challenge, we have a downloadable folder containing several files.
+
 ![Screenshot](images/door_files.png)
 
 ---
@@ -8,6 +9,7 @@ In this challenge, we have a downloadable folder containing several files.
 ### **Step 1: Identifying the Web Framework**
 
 By examining the `requirements.txt` and `app.py` files, we confirm that the application is built using **Flask**.
+
 ![Screenshot](images/door_flask_infos.png)
 
 ---
@@ -15,6 +17,7 @@ By examining the `requirements.txt` and `app.py` files, we confirm that the appl
 ### **Step 2: Examining the Docker Configuration**
 
 Looking into the `docker-compose.yaml` file, we notice that the application is using **templates** as an environment variable, which could be a potential security risk.
+
 ![Screenshot](images/door_docker.png)
 
 ---
