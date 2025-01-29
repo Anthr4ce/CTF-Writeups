@@ -1,4 +1,4 @@
-### **Forensic/Steganography Challenge - Extracting the Hidden Flag**
+### **Forensic Challenge - Extracting the Hidden Flag**
 
 In this challenge, we are given a **ZIP file** containing a **log file** and **two images**.
 
@@ -72,7 +72,7 @@ From the extracted data, I was able to **reconstruct the second half of the flag
 
 This challenge demonstrated the importance of **multiple forensic analysis techniques**:
 
-- Using **dcode.fr and CyberChef** to decode text strings from logs.
+- Using **dcode.fr and CyberChef** to decode manually tampered text strings from logs.
 - Using **Aperisolve** to extract **hidden strings and metadata** from images.
 - **Piecing together** the fragments of the flag from different sources.
 
