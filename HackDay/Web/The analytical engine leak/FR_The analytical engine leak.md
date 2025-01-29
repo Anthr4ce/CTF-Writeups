@@ -1,4 +1,4 @@
-SQL Injection et récupération de données sensibles
+**SQL Injection et récupération de données sensibles**
 
 Dans ce challenge, on a un formulaire avec deux champs : `username` et `password`. Notre objectif est d'exploiter une faille SQL Injection pour extraire des données sensibles de la base de données.
 ![Screenshot](images/web_chall_description.png)
