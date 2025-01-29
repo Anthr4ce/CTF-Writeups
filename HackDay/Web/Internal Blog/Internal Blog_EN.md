@@ -35,9 +35,9 @@ But an error was displayed:
 
 I tested different payloads by creating multiple accounts to determine **which field is exploitable**.
 
-After obtaining a registration token, I accessed my profile via `/user?token=$token`.
-
 ![Screenshot](images/blog_alert1.png)
+
+After obtaining a registration token, I accessed my profile via `/user?token=$token`.
 
 ![Screenshot](images/blog_alert.png)
 

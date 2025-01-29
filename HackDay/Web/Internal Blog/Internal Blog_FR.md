@@ -35,9 +35,9 @@ Mais une erreur s'affiche :
 
 J'ai testé différents payloads en créant plusieurs comptes pour identifier **le champ exploitable**.
 
-Après avoir obtenu un token d'enregistrement, j'ai accédé à mon profil via `/user?token=$token`.
-
 ![Screenshot](images/blog_alert1.png)
+
+Après avoir obtenu un token d'enregistrement, j'ai accédé à mon profil via `/user?token=$token`.
 
 ![Screenshot](images/blog_alert.png)
 
