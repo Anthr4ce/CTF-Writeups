@@ -22,33 +22,33 @@ Voici les parties importantes du code PHP fournies dans le challenge :
 Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POST :
 
 `<?php
-if(isset($_POST['password']) && strlen($MYPASSWORD) == strlen($_POST['password'])) {
-    $pwhash1 = crc16($MYPASSWORD);
-    $pwhash2 = crc8($MYPASSWORD);
+    if(isset($_POST['password']) && strlen($MYPASSWORD) == strlen($_POST['password'])) {
+        $pwhash1 = crc16($MYPASSWORD);
+        $pwhash2 = crc8($MYPASSWORD);
 
-    $password = $_POST['password'];
-    $pwhash3 = crc16($password);
-    $pwhash4 = crc8($password);
+        $password = $_POST['password'];
+        $pwhash3 = crc16($password);
+        $pwhash4 = crc8($password);
 
-    if($MYPASSWORD == $password) {
-        die("oops. Try harder!");
-    }
-    if($pwhash1 != $pwhash3) {
-        die("Oops. Nope. Try harder!");
-    }
-    if($pwhash2 != $pwhash4) {
-        die("OoOps. Not quite. Try harder!");
-    }
-    $access = true;
- 
-    if($access) {
-        echo "You win a flag: $FLAG";
-    } else {
-        echo "Denied! :-(";
-    }
-    } else {
-    echo "Try harder!";
-}
+        if($MYPASSWORD == $password) {
+            die("oops. Try harder!");
+        }
+        if($pwhash1 != $pwhash3) {
+            die("Oops. Nope. Try harder!");
+        }
+        if($pwhash2 != $pwhash4) {
+            die("OoOps. Not quite. Try harder!");
+        }
+        $access = true;
+    
+        if($access) {
+            echo "You win a flag: $FLAG";
+        } else {
+            echo "Denied! :-(";
+        }
+        } else {
+        echo "Try harder!";
+        }
 ?>
 `
 
@@ -75,7 +75,7 @@ Nous allons utiliser **un script Python** pour :
 
 1. **Calculer les valeurs CRC16 et CRC8**.
 
-`python
+`
 from pwn import *
 import itertools
 import string
