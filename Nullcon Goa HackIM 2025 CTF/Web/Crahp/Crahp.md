@@ -187,7 +187,7 @@ if __name__ == "__main__":
 ```
 
 ### **Mot de passe trouvé**
-Après exécution, le script a trouvé un mot de passe **différent** de `AdM1nP@assW0rd!` mais avec les **mêmes valeurs CRC16 et CRC8**.
+Après exécution, le script a trouvé des mot de passe **différents** de `AdM1nP@assW0rd!` mais avec les **mêmes valeurs CRC16 et CRC8**.
 
 ![Screenshot](images/collision_found.png)
 
