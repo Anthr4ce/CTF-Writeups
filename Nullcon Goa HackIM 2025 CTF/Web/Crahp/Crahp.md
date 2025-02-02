@@ -46,7 +46,7 @@ Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POS
     } else {
         echo "Denied! :-(";
     }
-} else {
+    } else {
     echo "Try harder!";
 }
 ?>`
