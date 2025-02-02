@@ -21,8 +21,7 @@ Voici les parties importantes du code PHP fournies dans le challenge :
 
 Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POST :
 ```php
-
-`<?php
+<?php
     if(isset($_POST['password']) && strlen($MYPASSWORD) == strlen($_POST['password'])) {
         $pwhash1 = crc16($MYPASSWORD);
         $pwhash2 = crc8($MYPASSWORD);
@@ -51,7 +50,6 @@ Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POS
         echo "Try harder!";
         }
 ?>
-`
 ```
 
 ### **2️⃣ Points clés à retenir**
@@ -77,7 +75,7 @@ Nous allons utiliser **un script Python** pour :
 
 1. **Calculer les valeurs CRC16 et CRC8**.
 
-`
+```python
 from pwn import *
 import itertools
 import string
@@ -134,7 +132,7 @@ def crc8(data: str):
     for char in data:
         crc = crc8Table[(crc ^ ord(char)) & 0xFF]
     return crc & 0xFF
-`
+```
 2. **Génération de la collision** et **vérifier si elles produisent la même valeur CRC**.
 
 `original_password = "AdM1nP@assW0rd!"
@@ -146,7 +144,7 @@ crc8_target = crc8(original_password)`
 Le bruteforce peut être très lent.
 J'ai donc utilisé PwnTools et multiprocessing pour accélérer la recherche en répartissant les calculs sur plusieurs cœurs avec un offset.
 
-`python
+```python
 original_password = "AdM1nP@assW0rd!"
 crc16_target = crc16(original_password)
 crc8_target = crc8(original_password)
@@ -169,7 +167,7 @@ if __name__ == "__main__":
     num_cores = multiprocessing.cpu_count()  
     pool = multiprocessing.Pool(processes=num_cores)
     pool.map(brute_force, range(num_cores))
-`
+```
 
 ### **Mot de passe trouvé**
 Après exécution, le script a trouvé un mot de passe **différent** de `AdM1nP@assW0rd!` mais avec les **mêmes valeurs CRC16 et CRC8**.
