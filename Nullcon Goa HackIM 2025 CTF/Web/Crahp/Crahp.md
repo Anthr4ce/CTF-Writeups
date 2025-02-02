@@ -20,6 +20,7 @@ Voici les parties importantes du code PHP fournies dans le challenge :
 ### **1️⃣ Vérification de l'authentification**
 
 Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POST :
+```php
 
 `<?php
     if(isset($_POST['password']) && strlen($MYPASSWORD) == strlen($_POST['password'])) {
@@ -51,6 +52,7 @@ Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POS
         }
 ?>
 `
+```
 
 ### **2️⃣ Points clés à retenir**
 
