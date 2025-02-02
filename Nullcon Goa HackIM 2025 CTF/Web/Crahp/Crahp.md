@@ -21,8 +21,8 @@ Voici les parties importantes du code PHP fournies dans le challenge :
 
 Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POST :
 
-
-`if(isset($_POST['password']) && strlen($MYPASSWORD) == strlen($_POST['password'])) {
+`<?php
+if(isset($_POST['password']) && strlen($MYPASSWORD) == strlen($_POST['password'])) {
     $pwhash1 = crc16($MYPASSWORD);
     $pwhash2 = crc8($MYPASSWORD);
 
@@ -49,7 +49,8 @@ Le script vérifie si l'utilisateur soumet un mot de passe via un formulaire POS
     } else {
     echo "Try harder!";
 }
-?>`
+?>
+`
 
 ### **2️⃣ Points clés à retenir**
 
