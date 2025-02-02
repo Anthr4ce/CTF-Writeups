@@ -34,7 +34,7 @@ En inspectant les paquets un par un, j'ai remarqué une **référence à un fich
 
 🔹 **Un mot de passe en clair !**
 
-![Screenshot](images/hidden_4.png)
+![Screenshot](images/hidden4.png)
 
 ---
 
