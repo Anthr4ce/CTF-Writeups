@@ -28,8 +28,6 @@ Contrairement aux vrais hash cryptographiques comme **SHA-256**, le CRC est **tr
 ✅ **En résumé :**  
 CRC est une **somme de contrôle rapide mais non sécurisée** utilisée pour **détecter** des erreurs, pas pour la **protection des données**.
 
----
-
 ## **Analyse du Code Source**
 
 Voici les parties importantes du code PHP fournies dans le challenge :
@@ -191,11 +189,11 @@ if __name__ == "__main__":
 ### **Mot de passe trouvé**
 Après exécution, le script a trouvé un mot de passe **différent** de `AdM1nP@assW0rd!` mais avec les **mêmes valeurs CRC16 et CRC8**.
 
-![Screenshot](images/mdp_found.png)
+![Screenshot](images/collision_found.png)
 
 Et la flag:
 
-![Screenshot](images/flag_found.png)
+![Screenshot](images/collision_flag_found.png)
 
 
 ## **Conclusion**
