@@ -11,6 +11,23 @@ Dans ce challenge, nous avons accès au code source d'un script PHP ainsi qu'à 
 
 L'objectif est d'obtenir le **flag** en contournant un mécanisme d'authentification basé sur des **hashes CRC**.
 
+### **📌 CRC, CRC16 et CRC8**
+
+🔹 **CRC (Cyclic Redundancy Check)**  
+Le **CRC** est une méthode de détection d'erreurs utilisée principalement pour vérifier l'intégrité des données dans les transmissions et le stockage. Il **n'est pas cryptographiquement sécurisé**, ce qui signifie qu’il est vulnérable aux collisions.
+
+🔹 **CRC16 et CRC8**  
+Ce sont des **variantes du CRC** qui utilisent **16 bits (CRC16)** et **8 bits (CRC8)** pour produire une somme de contrôle.
+
+- **CRC16** génère une valeur entre **0x0000 et 0xFFFF** (65 536 possibilités).
+- **CRC8** génère une valeur entre **0x00 et 0xFF** (256 possibilités).
+
+🔹 **Pourquoi c'est faible ?**  
+Contrairement aux vrais hash cryptographiques comme **SHA-256**, le CRC est **très facile à casser** car il n'est pas conçu pour la sécurité. Deux entrées différentes peuvent souvent produire le **même CRC**, ce qui permet d'exploiter des **collisions**.
+
+✅ **En résumé :**  
+CRC est une **somme de contrôle rapide mais non sécurisée** utilisée pour **détecter** des erreurs, pas pour la **protection des données**.
+
 ---
 
 ## **Analyse du Code Source**
@@ -135,9 +152,11 @@ def crc8(data: str):
 ```
 2. **Génération de la collision** et **vérifier si elles produisent la même valeur CRC**.
 
-`original_password = "AdM1nP@assW0rd!"
+```php
+original_password = "AdM1nP@assW0rd!"
 crc16_target = crc16(original_password)
-crc8_target = crc8(original_password)`
+crc8_target = crc8(original_password)
+```
 
 3. **Optimisation : Multi-threading**
 
