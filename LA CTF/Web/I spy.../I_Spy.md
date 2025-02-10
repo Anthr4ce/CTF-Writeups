@@ -82,7 +82,7 @@ On utilise **l'onglet Network** dans les DevTools, puis on recharge la page. En 
 
 En allant dans **Application → Cookies**, un autre token est trouvé :
 
-![Screenshot](images/spy_8.png)
+![Screenshot](images/spy_100.png)
 
 `647E67B4A8F4AA28FAB602151F1707F2`
 
