@@ -21,14 +21,39 @@ Plutôt que de cliquer sur **des milliers de boutons** je trouve un fichier **`m
 
 
 ```javascript
- const boxes = document.querySelectorAll('.box'); let flagbox = boxes[Math.floor(Math.random() * boxes.length)];
+ const boxes = document.querySelectorAll('.box');
+let flagbox = boxes[Math.floor(Math.random() * boxes.length)];
 ```
 
 - Le script **choisit un bouton au hasard** (`flagbox`) parmi tous les boutons (`boxes`).
 - Si on clique sur **le bon bouton**, il révèle le flag.
 
 ```javascript
-for (const box of boxes) {   if (box === flagbox) {     box.onclick = () => {       let enc = `"\\u000e\\u0003\\u0001\\u0016\\u0004\\u0019\\u0015V\\u0011=\\u000bU=\\u000e\\u0017\\u0001\\t=R\\u0010=\\u0011\\t\\u000bSS\\u001f"`;       for (let i = 0; i < enc.length; ++i) {         try {           enc = JSON.parse(enc);         } catch (e) { }       }       let rw = [];       for (const e of enc) {         rw.push(e.charCodeAt(0) ^ 0x62);       }       const flag = rw.map(x => String.fromCharCode(x)).join('');       alert(`Congrats ${flag}`);     };   } else {     box.onclick = () => alert('no flag here');   } };
+for (const box of boxes) {
+    if (box === flagbox) {
+        box.onclick = () => {
+            let enc = `"\\u000e\\u0003\\u0001\\u0016\\u0004\\u0019\\u0015V\\u0011=\\u000bU=\\u000e\\u0017\\u0001\\t=R\\u0010=\\u0011\\t\\u000bSS\\u001f"`;
+
+            for (let i = 0; i < enc.length; ++i) {
+                try {
+                    enc = JSON.parse(enc);
+                } catch (e) {
+                    break;
+                }
+            }
+
+            let rw = [];
+            for (const e of enc) {
+                rw.push(e.charCodeAt(0) ^ 0x62);
+            }
+
+            const flag = rw.map(x => String.fromCharCode(x)).join('');
+            alert(`Congrats ${flag}`);
+        };
+    } else {
+        box.onclick = () => alert('no flag here');
+    }
+}
 ```
 
 ### **2️⃣ Comment le flag est caché ?**
