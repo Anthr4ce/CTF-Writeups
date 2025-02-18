@@ -50,7 +50,7 @@ Quelques secondes plus tard, je reçois une requête sur mon endpoint **avec le 
 
 Avec ces informations, je modifie **mes propres cookies** dans mon navigateur pour **usurper la session de l'admin**.
 
-![Screenshot](images/chatroom_4.png)
+![Screenshot](images/chatroom_6.png)
 
 ---
 
@@ -58,7 +58,7 @@ Avec ces informations, je modifie **mes propres cookies** dans mon navigateur po
 
 Après avoir **rechargé la page avec la session de l'admin**, je tombe directement sur le **flag** 🎉.
 
-![Screenshot](images/chatroom_5.png)
+![Screenshot](images/chatroom_7.png)
 
 ---
 
