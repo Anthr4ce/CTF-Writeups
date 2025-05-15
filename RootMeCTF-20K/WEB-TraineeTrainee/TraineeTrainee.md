@@ -8,6 +8,7 @@ The trainee made a weird commit that’s flooding the server with requests—and
 
 As soon as we connect we have a file reader form.
 I stared with a whatweb
+
 ![Screenshot](images/trainee-whatweb.png)
 
 With this we know the backend runs a Nginx 1.24.0.
@@ -19,10 +20,12 @@ I tried then a normal path traversal because was the most coherent and no braine
 
 
 And luckily I saw right.
+
 ![Screenshot](images/trainee-lfi1-res.png)
 
 
 Digging through /etc/nginx/nginx.conf I eventually ran into:
+
 ![Screenshot](images/trainee-pivot!.png)
 
 As we can see we there is a endpoint introduced by the trainee
