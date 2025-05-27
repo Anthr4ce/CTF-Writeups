@@ -5,6 +5,7 @@ Dans ce chall  il faut acceder flag.webp et on le code source.
 En explorant un peu la page, j’ai remarqué une longue chaîne encodée en base64. Une fois décodée et réorganisée, elle contenait plusieurs images `.webp` portant des noms étranges comme `1991781613.webp`, `1273827392.webp`, etc.
 
 En consultant le code source :
+
 ![Screenshot](images/img2.png)
 
 On comprend que les noms des fichiers sont générés avec `getrandbits(32)` de Python, c’est-à-dire 32 bits aléatoires produits par la fonction `random.getrandbits`.
@@ -74,7 +75,9 @@ print(token)
 ### 📦 Récupération du flag
 
 On remplace le cookie JWT dans Burp:
+
 ![Screenshot](images/img3.png)
 
 Et on obtient :
+
 ![Screenshot](images/img4.png)
