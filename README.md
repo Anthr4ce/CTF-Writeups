@@ -1,4 +1,4 @@
-# 🧠 CTF Writeups
+# CTF Writeups
 
 Welcome to my collection of CTF writeups! I'm currently a Bac+5 student at [École 2600](https://www.2600.eu), and I regularly participate in Capture The Flag competitions — mostly focused on **Web**, **OSINT**, and some **Forensics** challenges.
 
