@@ -17,7 +17,3 @@ Each week, I document the challenges I work on — whether they're from school, 
 - 🧪 Hack The Box — *No boxes yet, still preparing for the CPTS...*
 
 Feel free to explore, learn, or reach out if you want to collaborate on future CTFs!
-
----
-
-🚩 *Hacking is about curiosity, not destruction.*
