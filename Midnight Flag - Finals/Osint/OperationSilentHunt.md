@@ -1,114 +1,129 @@
 # Operation Silent Hunt
 
-Description of the challenge:
+## Challenge Description
 
-During the theft of a hard drive containing sensitive data, the attacker made a mistake. They lost their phone at the scene.  
-Your mission: follow the clues and locate the exact address where the hard drive is hidden.  
+> During the theft of a hard drive containing sensitive data, the attacker made a mistake: they lost their phone at the scene.  
+> **Your mission:** follow the clues and locate the **exact address** where the hard drive is hidden.  
+>
+> But be careful... getting caught could compromise the entire operation.  
+>
+> 🔍 Only use the following websites for your investigation:
+>
+> - [Google](https://www.google.com/)
+> - [YouTube](https://www.youtube.com/)
+> - [Pinterest](https://fr.pinterest.com/)
+> - [Google Maps](https://www.google.com/maps)
+> - [X (Twitter)](https://x.com/)
+> - [Instagram](https://www.instagram.com/)
+> - [GitHub](https://github.com/)
+> - [Reddit](https://www.reddit.com/)
+> - [LinkedIn](https://linkedin.com/)
+>
+> 📱 Virtual Phone: [https://message-app.midnightflag.fr/](https://message-app.midnightflag.fr/)  
+> 🔐 Format of the flag: `MCTF{housenumber_street_city}` (all lowercase)  
+> 💡 Example: `MCTF{66_rue_des_fleurs_paris}`
 
-But be careful... getting caught could compromise the entire operation.  
+---
 
-It is necessary to conduct online research only on the following websites:
+## Step 1: The Virtual Phone
 
-- [https://www.google.com/](https://www.google.com/)
-- [https://www.youtube.com/](https://www.youtube.com/)
-- [https://fr.pinterest.com/](https://fr.pinterest.com/)
-- [https://www.google.com/maps](https://www.google.com/maps)
-- [https://x.com/](https://x.com/)
-- [https://www.instagram.com/](https://www.instagram.com/)
-- [https://github.com/](https://github.com/)
-- [https://www.reddit.com/](https://www.reddit.com/)
-- [https://linkedin.com/](https://linkedin.com/)
+We start the challenge with a **virtual phone** that’s locked. To unlock it, we need to find the correct code.
 
-  
-Virtual Phone : https://message-app.midnightflag.fr/  
-  
-Format : **MCTF{housenumber_street_city} (all lowercase)**  
-Exemple: **MCTF{66_rue_des_fleurs_paris}**  
+![Phone locked](images/image.png)  
+![Clue on screen](images/image2.png)
 
-We are given a virtual phone and to unlock it we need a code.
+The first thing we notice is some **information about an Instagram account**. This could be a clue.
 
-![alt text](images/image.png)
-![alt text](images/image2.png)
+![Instagram post](images/image3.png)  
+![Instagram photos](images/image4.png)
 
-As we can see in the first image, there are some informations about an instagram account.
+Looking closely at the photos, we can spot **patterns** that could potentially be part of the phone's unlock code.
 
-![alt text](images/image3.png)
-![alt text](images/image4.png)
+![More cat photos](images/image5.png)  
+![Photos hint](images/image6.png)
 
-By inspecting closely the photos, we notice some patters that could be used as code to unlock the phone.
+Since the user seems emotionally attached to their **cat**, I noticed a **date** in one of the photos.
 
-![alt text](images/image5.png)
-![alt text](images/image6.png)
+![Cat with date](images/image7.png)
 
-Since he seemed pretty attached to his cat, i noticed this date.
-
-![alt text](images/image7.png)
-
-I tried this as code
+I tried using this as the unlock code:
 
 ```text
 020425
 ```
 
-And we can finally unlock the phone!
+✅ It worked — the phone is now **unlocked**!
 
-As soon as we unlock it, we have this conversation
+---
 
-![alt text](images/image8.png)
+## Step 2: The Chat App
 
-I then tried to gather some info and i tried every possible input and when we select "I lost the website link", we get a reply with a website
+As soon as we access the phone, a **conversation** appears.
 
-![alt text](images/image9.png)
+![Message received](images/image8.png)
 
-And while asking the credentials we get asked a question about the name of the cat
+I tried several inputs, and eventually, by choosing "**I lost the website link**", I received a **URL** as a reply.
 
-![alt text](images/image10.png)
+![Link received](images/image9.png)
 
-Luckily we know the name thanks to the photos that our "target" shared with Eloan FRANK, we know the name of the cat
+When we try to access the site, we're asked for **credentials**. One of the questions is the **name of the cat**.
 
-![alt text](images/image11.png)
-![alt text](images/image12.png)
+![Login prompt](images/image10.png)
 
-We then get to the website where the hard drive was sold and we log in with the credentials.
+Luckily, we saw that earlier in the photos the user shared with **Eloan FRANK**. We can see the **cat’s name** there.
 
-![alt text](images/image13.png)
+![Cat's name image 1](images/image11.png)  
+![Cat's name image 2](images/image12.png)
 
-While checking the the websitei looked at the json that supposedly charged the data and found the nickname of the buyer
+Using this, we successfully **log in** to the website where the hard drive was being sold.
+
+![Logged in](images/image13.png)
+
+---
+
+## Step 3: Finding the Buyer
+
+While inspecting the site, I checked the **JSON data** loading the product and noticed the buyer’s nickname:
 
 ```js
-}]
-          , m = [{
-            id: 5,
-            title: "External Hard Drive",
-            description: "2TB external hard drive",
-            price: 2e5,
-            seller: "tech_seller",
-            buyer: "Darkythedark42",
-            deliveryDate: "22/06/2025 at 16:00",
-            image: "/External_Hard_Drive.webp"
-        }, {
+{
+  id: 5,
+  title: "External Hard Drive",
+  description: "2TB external hard drive",
+  price: 2e5,
+  seller: "tech_seller",
+  buyer: "Darkythedark42",
+  deliveryDate: "22/06/2025 at 16:00",
+  image: "/External_Hard_Drive.webp"
+}
 ```
 
-And i got a X account.
-https://x.com/Darkythedark42
+This led me to an **X (Twitter)** account:  
+👉 [https://x.com/Darkythedark42](https://x.com/Darkythedark42)
 
-Checking the account, we see only 1 post 
+The account only had **one post**:
 
-![alt text](images/image14.png)
+![X post](images/image14.png)
 
-Trynna figure out where the location would it  be i noticed the first letters of the place
+Trying to figure out the **location**, I noticed the **first letters** of a **place name** in the image.
 
-![alt text](images/image15.png)
+![Partial location clue](images/image15.png)
 
-I tried to google reverse image search and i found a result kinda sus
+I ran a **Google Reverse Image Search**, and something looked familiar…
 
-![alt text](images/image16.png)
+![Suspicious result](images/image16.png)
 
-We are competing in Rennes, so it wouldn't be too shocking if the place we are looking for would be here, no?
+We're playing the CTF from **Rennes**, so it wouldn't be surprising if the location were nearby.
 
-![alt text](images/image17.png)
+![Google Maps Rennes](images/image17.png)
 
-Finally we found it. So now we just have to get the route number and name and we have the flag.
+---
+
+## Step 4: The Final Flag
+
+After matching the location on Google Maps, I finally found the **street name and house number**.
+
+✅ **Flag:**
 
 ```text
 MCTF{48_rue_de_saint-brieuc_rennes}
